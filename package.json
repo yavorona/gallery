@@ -1,0 +1,16 @@
+{
+  "name": "gallery",
+  "version": "1.0.0",
+  "description": "Front End Capstone - Tripadvisor.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Gutierrez",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.8.9",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
