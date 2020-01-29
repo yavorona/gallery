@@ -4,13 +4,36 @@
   "description": "Front End Capstone - Tripadvisor.com",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "mongo < ./server/seed.js",
+    "react-dev": "webpack -w",
+    "start": "nodemon ./server/index.js",
+    "deps": "npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader webpack-cli webpack"
   },
   "author": "Kevin Gutierrez",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.610.0",
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
     "mongoose": "^5.8.9",
+    "nodemon": "^2.0.2",
+    "path": "^0.12.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ]
   }
 }
