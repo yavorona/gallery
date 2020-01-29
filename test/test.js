@@ -1,4 +1,4 @@
-const { s3 } = require("./helpers.js");
+const { s3 } = require("../server/helpers.js");
 // mock promises for s3?
 // var AWS = require("aws-sdk");
 // describe("mock promise", () => {
@@ -14,7 +14,8 @@ const { s3 } = require("./helpers.js");
 //     });
 //   });
 // });
-// testing S3 manipulation?
+
+// testing S3 functionality
 s3.putObject({}, () => {
   return "successful test";
 });
