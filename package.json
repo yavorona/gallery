@@ -4,7 +4,7 @@
   "description": "Front End Capstone - Tripadvisor.com",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "seed": "mongo < ./server/seed.js",
     "react-dev": "webpack -w",
     "start": "nodemon ./server/index.js",
@@ -27,6 +27,11 @@
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest": "^25.1.0",
+    "jest-environment-enzyme": "^7.1.2",
+    "jest-enzyme": "^7.1.2",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   },
