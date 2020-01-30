@@ -1,6 +1,6 @@
 import React from "react";
 
-import SubGallery from "./SubGallery.jsx";
+import Thumbnail from "./Thumbnail.jsx";
 
 class SidePanel extends React.Component {
   constructor(props) {
@@ -10,9 +10,9 @@ class SidePanel extends React.Component {
     return (
       <div style={{ verticalAlign: "baseline" }}>
         <h1>Side Panel</h1>
-        <SubGallery name="Dining" />
-        <SubGallery name="Room/suite" />
-        <SubGallery name="Traveler" />
+        <Thumbnail />
+        <Thumbnail />
+        <Thumbnail />
       </div>
     );
   }

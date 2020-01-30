@@ -1,3 +1,5 @@
+// file for Main display gallery component
+
 import React from "react";
 
 class MainGallery extends React.Component {
@@ -7,7 +9,7 @@ class MainGallery extends React.Component {
   render() {
     return (
       <div>
-        <img src={this.props.picture}></img>
+        <img style={{ maxWidth: "30rem" }} src={this.props.display}></img>
       </div>
     );
   }
