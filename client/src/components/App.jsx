@@ -9,36 +9,71 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayedPhoto: "url",
-      thumbnails: []
+      displayedPhoto: "",
+      thumbnails: [],
+      dining: [],
+      traveler: [],
+      roomSuite: []
     };
+    this.changeDisplay = this.changeDisplay.bind(this);
   }
+
   componentDidMount() {
-    axios.get("/gallery").then(res => {
+    let random = randomNum();
+    axios.get(`/gallery/${random}`).then(res => {
       console.log("client recieved response: ", res);
+      let urls = res.data;
       this.setState({
-        displayedPhoto: res.data[1],
-        thumbnails: res.data
+        thumbnails: urls.main,
+        dining: urls.dining,
+        traveler: urls.traveler,
+        roomSuite: urls.roomsuite,
+        displayedPhoto: urls.main[0]
       });
-      console.log("thumbnails set to: ", this.state.thumbnails);
+    });
+  }
+
+  changeDisplay(event) {
+    event.preventDefault();
+    this.setState({
+      displayedPhoto: `${event.target.value}`
     });
   }
 
   render() {
     return (
       <div className="container">
-        <div>
+        <div className="mainGallery">
           <MainGallery display={this.state.displayedPhoto} />
         </div>
-        <div className="bottomContainer">
-          <BottomPanel thumbnails={this.state.thumbnails} />
+        <div className="bottomPanel1">
+          <BottomPanel
+            row="2"
+            changeDisplay={this.changeDisplay}
+            thumbnails={this.state.thumbnails}
+          />
         </div>
-        <div>
-          <SidePanel />
+        <div className="bottomPanel2">
+          <BottomPanel
+            row="1"
+            changeDisplay={this.changeDisplay}
+            thumbnails={this.state.thumbnails}
+          />
+        </div>
+        <div className="sidePanel">
+          <SidePanel
+            dining={this.state.dining}
+            traveler={this.state.traveler}
+            roomSuite={this.state.roomSuite}
+          />
         </div>
       </div>
     );
   }
 }
+
+let randomNum = () => {
+  return Math.floor(Math.random() * 5 + 1);
+};
 
 export default App;

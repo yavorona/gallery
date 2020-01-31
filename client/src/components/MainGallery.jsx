@@ -5,11 +5,27 @@ import React from "react";
 class MainGallery extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      display: ""
+    };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.display !== this.props.display) {
+      this.setState({
+        display: this.props.display
+      });
+      console.log("display set to: ", this.state.display);
+    }
   }
   render() {
     return (
-      <div>
-        <img style={{ maxWidth: "30rem" }} src={this.props.display}></img>
+      <div className="displayWrap">
+        <div className="mainDisplay">
+          <img src={this.state.display}></img>
+        </div>
+        <div className="arrow"></div>
+        <span>></span>
       </div>
     );
   }
