@@ -5,25 +5,17 @@ import React from "react";
 class Thumbnail extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      position: {
-        "grid-row": `${this.props.counter} / ${this.props.counter + 1}`
-      }
-    };
+    this.state = {};
+    this.customId = "thumb" + this.props.counter;
   }
   render() {
-    let thumbStyle = {
-      maxWidth: "4rem",
-      "grid-row": `${this.props.counter} / ${this.props.counter + 1}`
-    };
-    console.log("current position is: ", this.state.position);
+    console.log("custom id: ", this.customId, "and from row: ", this.props.row);
     return (
-      <div>
-        <div className="thumbnail">
-          <a href={this.props.img}>
-            <img style={thumbStyle} src={this.props.img}></img>
-          </a>
-        </div>
+      <div
+        onClick={this.props.changeDisplay}
+        className={"row" + this.props.row + `${this.customId}`}
+      >
+        <img className="thumbImage" src={this.props.img}></img>
       </div>
     );
   }

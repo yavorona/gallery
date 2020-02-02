@@ -13,13 +13,16 @@ class BottomPanel extends React.Component {
   render() {
     let thumbnails = this.props.thumbnails;
     return (
-      <div className="bottomContainer">
+      <div className="row">
         {thumbnails.map(thumbnail => {
           this.state.counter++;
           return (
-            <div>
-              <Thumbnail counter={this.state.counter} img={thumbnail} />
-            </div>
+            <Thumbnail
+              row={this.props.row}
+              changeDisplay={this.props.changeDisplay}
+              counter={this.state.counter}
+              img={thumbnail}
+            />
           );
         })}
       </div>
