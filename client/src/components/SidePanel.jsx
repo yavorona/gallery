@@ -24,7 +24,7 @@ class SidePanel extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="sidePanel">
         <div className="wrap">
           <img
             className="roomSideThumbnail"
@@ -37,14 +37,13 @@ class SidePanel extends React.Component {
             </span>
           </div>
         </div>
-
-        <div className="wrap">
-          <div className="sideAlbum">
+        <div className="middleBorder">
+          <div className="wrapMiddle">
             <img
               className="travelerSideThumbnail"
               src={this.state.traveler[0]}
             ></img>
-            <div className="text">
+            <div className="textMiddle">
               <span>
                 Traveler
                 <br></br>
@@ -53,14 +52,8 @@ class SidePanel extends React.Component {
             </div>
           </div>
         </div>
-
         <div className="wrap">
-          <div className="sideAlbum">
-            <img
-              className="diningSideThumbnail"
-              src={this.state.dining[1]}
-            ></img>
-          </div>
+          <img className="diningSideThumbnail" src={this.state.dining[1]}></img>
           <div className="text">
             <span>
               Dining

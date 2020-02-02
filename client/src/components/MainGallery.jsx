@@ -1,6 +1,8 @@
 // file for Main display gallery component
 
 import React from "react";
+import RightArrow from "./RightArrow.jsx";
+import LeftArrow from "./LeftArrow.jsx";
 
 class MainGallery extends React.Component {
   constructor(props) {
@@ -21,11 +23,9 @@ class MainGallery extends React.Component {
   render() {
     return (
       <div className="displayWrap">
-        <div className="mainDisplay">
+        <div className="mainImage">
           <img src={this.state.display}></img>
         </div>
-        <div className="arrow"></div>
-        <span>></span>
       </div>
     );
   }
