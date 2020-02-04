@@ -11,7 +11,6 @@ class SidePanel extends React.Component {
       dining: ""
     };
   }
-
   componentDidUpdate(prevProps) {
     if (prevProps.roomSuite !== this.props.roomSuite) {
       this.setState({
