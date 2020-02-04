@@ -1,2 +1,2 @@
 # gallery
-Photo gallery module with modal functionality.
+Photo gallery module.
