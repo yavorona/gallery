@@ -24,18 +24,21 @@ class App extends Component {
   }
 
   componentDidMount() {
-    let random = randomNum();
-    axios.get(`/gallery/${random}`).then(res => {
-      console.log("client recieved response: ", res);
-      let urls = res.data;
-      this.setState({
-        thumbnails: urls.main,
-        dining: urls.dining,
-        traveler: urls.traveler,
-        roomSuite: urls.roomsuite,
-        displayedPhoto: urls.main[0]
+    axios
+      .get("/hotels" + location.pathname)
+      .then(res => {
+        return res.data;
+        console.log(location.pathname);
+      })
+      .then(urls => {
+        this.setState({
+          thumbnails: urls.main,
+          dining: urls.dining,
+          traveler: urls.traveler,
+          roomSuite: urls.roomsuite,
+          displayedPhoto: urls.main[0]
+        });
       });
-    });
   }
 
   changeDisplay(event) {
@@ -86,18 +89,21 @@ class App extends Component {
     return (
       <div className="container">
         <div className="buttonText">
-          <div className="rightArrow">
-            <RightArrow goToNextPhoto={this.goToNextPhoto} />
+          <div className="fullViewButton">
+            <FullView />
           </div>
-          <div className="leftArrow">
-            <LeftArrow goToPrevPhoto={this.goToPrevPhoto} />
-          </div>
-          <div className="fullViewButton"></div>
         </div>
         <div className="leftPanels">
           <div className="mainGallery">
             <MainGallery display={this.state.displayedPhoto} />
+            <div className="rightArrow">
+              <RightArrow goToNextPhoto={this.goToNextPhoto} />
+            </div>
+            <div className="leftArrow">
+              <LeftArrow goToPrevPhoto={this.goToPrevPhoto} />
+            </div>
           </div>
+
           <div className="thumbnailPanel">
             <div className="bottomPanel1">
               <BottomPanel

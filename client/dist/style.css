@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-body {
+galleryBody {
   background-color: rgb(212, 212, 212);
   margin: 50px;
 }
@@ -53,10 +53,6 @@ img {
   width: 100%;
   border-right: solid white 0.7px;
   border-bottom: solid white 1.2px;
-}
-
-.travelerSideThumbail {
-  border: solid white;
 }
 
 .thumbImage {
@@ -166,8 +162,7 @@ img {
 .middleBorder {
   border-top: 1.5px solid white;
   border-bottom: 1.5px solid white;
-  margin-bottom: 1px;
-  height: 33%;
+  height: 33.3%;
 }
 
 .wrapMiddle {
@@ -203,32 +198,51 @@ img {
   opacity: 0.8;
 }
 
-.rightArrow {
+.fullViewShadow {
   position: absolute;
+  top: 35%;
+  left: 25%;
+  width: 15%;
+  color: white;
+  justify-self: center;
+  font: arial;
+  font-size: 22px;
+  font-weight: 400;
+  background-color: rgba(55, 58, 58, 0.5);
+  border: rgba(55, 58, 58, 0.5);
+  border-radius: 5px;
+  font-size: 1rem;
+  height: 8%;
+  z-index: 10;
+  padding-left: 10px;
+  padding-top: 15px;
+}
+
+.rightArrow {
+  position: fixed;
   top: 35%;
   left: 63.23%;
   width: 6%;
   color: white;
   justify-self: center;
   background-color: rgba(55, 58, 58, 0.5);
-  border: rgba(123, 128, 128, 0.5);
+  border: rgba(55, 58, 58, 0.5);
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   font-size: 2rem;
   height: 8%;
   z-index: 10;
-}
-
-.buttonText {
-  cursor: pointer;
+  padding-top: 9px;
 }
 
 .leftArrow:hover {
   filter: brightness(35%);
+  cursor: pointer;
 }
 
 .rightArrow:hover {
   filter: brightness(35%);
+  cursor: pointer;
 }
 
 .leftArrow {
@@ -245,6 +259,13 @@ img {
   z-index: 10;
   font-size: 2rem;
   height: 8%;
+  padding-bottom: 9px;
+}
+
+.icon {
+  height: 40px;
+  width: 30px;
+  z-index: 10;
 }
 
 /* Individual thumb grid placement */
