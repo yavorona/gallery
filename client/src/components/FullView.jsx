@@ -4,7 +4,9 @@ const FullView = props => {
   return (
     <div className="fullViewShadow">
       <div className="fullView" onClick={props.fullView}>
-        View All
+        <i class="fa fa-expand" aria-hidden="true">
+          Full View
+        </i>
         <i className="fullViewButton"></i>
       </div>
     </div>
