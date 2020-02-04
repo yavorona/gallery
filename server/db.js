@@ -5,7 +5,7 @@ mongoose.connect("mongodb://localhost:27017/gallery", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
-
+// schema for photo urls
 let gallerySchema = {
   id: { type: Number, unique: true },
   main: [String],

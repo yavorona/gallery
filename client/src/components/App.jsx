@@ -23,6 +23,7 @@ class App extends Component {
     this.goToNextPhoto = this.goToNextPhoto.bind(this);
   }
 
+  // establish get request on page load
   componentDidMount() {
     axios
       .get("/hotels" + location.pathname)
@@ -41,6 +42,7 @@ class App extends Component {
       });
   }
 
+  // function to change main gallery image when thumbnail clicked
   changeDisplay(event) {
     event.preventDefault();
     console.log(event.target.src);
@@ -49,6 +51,7 @@ class App extends Component {
     });
   }
 
+  // function to go to previous photo when prev arrow clicked
   goToPrevPhoto(e) {
     e.preventDefault();
     let current = this.state.thumbnails.indexOf(this.state.displayedPhoto);
@@ -67,6 +70,7 @@ class App extends Component {
     }
   }
 
+  // function to go to next photo when next arrow clicked
   goToNextPhoto(e) {
     e.preventDefault();
     let current = this.state.thumbnails.indexOf(this.state.displayedPhoto);
@@ -132,9 +136,5 @@ class App extends Component {
     );
   }
 }
-
-let randomNum = () => {
-  return Math.floor(Math.random() * 5 + 1);
-};
 
 export default App;

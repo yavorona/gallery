@@ -12,6 +12,7 @@ class MainGallery extends React.Component {
     };
   }
 
+  // change the main gallery when thumbnail or arrows clicked
   componentDidUpdate(prevProps) {
     if (prevProps.display !== this.props.display) {
       this.setState({
