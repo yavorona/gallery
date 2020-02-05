@@ -9,7 +9,6 @@ class Thumbnail extends React.Component {
     this.customId = "thumb" + this.props.counter;
   }
   render() {
-    console.log("custom id: ", this.customId, "and from row: ", this.props.row);
     return (
       <div
         onClick={this.props.changeDisplay}

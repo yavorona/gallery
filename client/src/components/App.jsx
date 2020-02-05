@@ -26,10 +26,9 @@ class App extends Component {
   // establish get request on page load
   componentDidMount() {
     axios
-      .get("/hotels" + location.pathname)
+      .get("/gallery" + location.pathname)
       .then(res => {
         return res.data;
-        console.log(location.pathname);
       })
       .then(urls => {
         this.setState({
@@ -45,7 +44,7 @@ class App extends Component {
   // function to change main gallery image when thumbnail clicked
   changeDisplay(event) {
     event.preventDefault();
-    console.log(event.target.src);
+
     this.setState({
       displayedPhoto: `${event.target.src}`
     });
@@ -57,13 +56,13 @@ class App extends Component {
     let current = this.state.thumbnails.indexOf(this.state.displayedPhoto);
     if (current === 0) {
       let newDisplay = this.state.thumbnails[9];
-      console.log("replacing current: ", current, "with: ", newDisplay);
+
       this.setState({
         displayedPhoto: newDisplay
       });
     } else {
       let newDisplay = this.state.thumbnails[current - 1];
-      console.log("replacing current: ", current, "with: ", newDisplay);
+
       this.setState({
         displayedPhoto: newDisplay
       });
@@ -76,13 +75,13 @@ class App extends Component {
     let current = this.state.thumbnails.indexOf(this.state.displayedPhoto);
     if (current === 9) {
       let newDisplay = this.state.thumbnails[0];
-      console.log("replacing current: ", current, "with: ", newDisplay);
+
       this.setState({
         displayedPhoto: newDisplay
       });
     } else {
       let newDisplay = this.state.thumbnails[current + 1];
-      console.log("replacing current: ", current, "with: ", newDisplay);
+
       this.setState({
         displayedPhoto: newDisplay
       });
@@ -99,13 +98,13 @@ class App extends Component {
         </div>
         <div className="leftPanels">
           <div className="mainGallery">
-            <MainGallery display={this.state.displayedPhoto} />
             <div className="rightArrow">
               <RightArrow goToNextPhoto={this.goToNextPhoto} />
             </div>
             <div className="leftArrow">
               <LeftArrow goToPrevPhoto={this.goToPrevPhoto} />
             </div>
+            <MainGallery display={this.state.displayedPhoto} />
           </div>
 
           <div className="thumbnailPanel">

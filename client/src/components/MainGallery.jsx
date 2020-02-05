@@ -18,7 +18,6 @@ class MainGallery extends React.Component {
       this.setState({
         display: this.props.display
       });
-      console.log("display set to: ", this.state.display);
     }
   }
   render() {
