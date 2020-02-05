@@ -4,7 +4,7 @@ const DIST_DIR = path.join(__dirname, "/../client/dist");
 const express = require("express");
 const parser = require("body-parser");
 const app = express();
-const port = 3000;
+const port = 6969;
 const db = require("./db.js");
 
 app.use("/:id/", express.static(DIST_DIR));
